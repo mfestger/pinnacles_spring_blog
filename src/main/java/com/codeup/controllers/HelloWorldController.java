@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.*;
 @Controller //@WebServlet
 public class HelloWorldController {
     @GetMapping("/hello")  //(urlPatterns)
-    @ResponseBody          // response.getWriter.println("hello world!")
+    // @ResponseBody          // I commented this out because Thymelead doesn't need it
     public String hello() {
-        return "Hello world!";
-    }
+        return "hello";
+    } // it'll kook for the view within templates if no ResponseBody annotation is found
 
     @GetMapping("/hello/{name}/{lastName}") // shortcut for RequestMapping (method = GET)
     @ResponseBody

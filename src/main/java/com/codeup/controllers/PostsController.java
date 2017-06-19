@@ -24,10 +24,15 @@ public class PostsController {
         return "view the form for creating a post";
     }
 
-    @GetMapping("posts/create")
+    @PostMapping("posts/create")
     @ResponseBody
     public String savePost() {
         return "create a new post";
     }
+
+    @GetMapping("resume")
+    @ResponseBody
+    public String resume() {return "Here is my resume";}
+
 
 }
