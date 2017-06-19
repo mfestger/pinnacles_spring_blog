@@ -1,23 +1,48 @@
 package com.codeup.controllers;
 
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PostsController {
 
-    @RequestMapping(path = "/posts", method = RequestMethod.GET)
+    @GetMapping("/posts")
     @ResponseBody
-    public String index() {
-        return "here is the index page";
+    public String viewAll() {
+        return "posts index page";
     }
 
-    @RequestMapping(path = "/posts/{id}", method = RequestMethod.GET)
+
+    @GetMapping("/posts/{id}")
     @ResponseBody
-    public String individualPost(@PathVariable int id) {
-        return "viewing an individual post. ID number is: " + id;
+    public String viewIndividualPost(@PathVariable long id) {
+        return "view an individual post with ID: " + id;
     }
+
+    @GetMapping("/posts/create")
+    @ResponseBody
+    public String showPostForm() {
+        return "view the form for creating a post";
+    }
+
+    @GetMapping("posts/create")
+    @ResponseBody
+    public String savePost() {
+        return "create a new post";
+    }
+
+
+
+
+//    @RequestMapping(path = "/posts", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String index() {
+//        return "here is the index page";
+//    }
+//
+//    @RequestMapping(path = "/posts/{id}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String individualPost(@PathVariable int id) {
+//        return "viewing an individual post. ID number is: " + id;
+//    }
 }
