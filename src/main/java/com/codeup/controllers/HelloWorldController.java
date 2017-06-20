@@ -3,13 +3,15 @@ package com.codeup.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.ws.Response;
+
 @Controller //@WebServlet
 public class HelloWorldController {
     @GetMapping("/hello")  //(urlPatterns)
     // @ResponseBody          // I commented this out because Thymelead doesn't need it
     public String hello() {
         return "hello";
-    } // it'll kook for the view within templates if no ResponseBody annotation is found
+    } // it'll look for the view within templates if no ResponseBody annotation is found
 
     @GetMapping("/hello/{name}/{lastName}") // shortcut for RequestMapping (method = GET)
     @ResponseBody
@@ -23,5 +25,11 @@ public class HelloWorldController {
         // if, switch, while, do-while, for logic can work here
         return number + " plus one is" + (number + 1) + "!";
     }
+
+//    @GetMapping("/resume")
+//    @ResponseBody
+//    public String resume() {
+//        return "resume";
+//    }
 
 }
