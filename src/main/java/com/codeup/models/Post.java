@@ -11,6 +11,7 @@ public class Post {
         this.body = body;
     }
 
+
     public String getTitle() {
         return title;
     }
