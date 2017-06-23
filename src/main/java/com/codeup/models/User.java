@@ -23,6 +23,13 @@ public class User {
 
     }
 
+    public User(User user){
+        id=user.id;
+        username=user.username;
+        password=user.password;
+    }
+
+
     public User(long id, String username, String email, String password) {
         this.id = id;
         this.username = username;

@@ -12,18 +12,18 @@ import java.util.List;
 
 @Service("customUserDetailsService")
 public class UserDetailsLoader implements UserDetailsService {
-    private final Users users;
+    private final UsersRepository userRepo;
     private final Roles roles;
 
     @Autowired
-    public UserDetailsLoader(Users users, Roles roles) {
-        this.users = users;
+    public UserDetailsLoader(UsersRepository userRepo, Roles roles) {
+        this.userRepo = userRepo;
         this.roles = roles;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = users.findByUsername(username);
+        User user = userRepo.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("No user found for " + username);
         }
