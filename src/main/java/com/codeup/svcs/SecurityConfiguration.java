@@ -11,9 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-/**
- * Created by fer on 6/23/17.
- */
 @Configuration
 @EnableWebSecurity
 @ComponentScan(basePackageClasses = UserWithRoles.class)
@@ -43,7 +40,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login?logout") // append a query string value
                 .and()
                 .authorizeRequests()
-                .antMatchers("/posts/create", "/posts/?/edit") // only authenticated users can create ads
+                .antMatchers(
+                        "/posts/create",
+                        "/posts/?/edit",
+                        "/ads/create"
+                ) // only authenticated users can create ads
                 .authenticated()
         ;
     }
