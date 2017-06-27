@@ -6,11 +6,8 @@
 </head>
 <body>
 <th:block th:switch="${error}">
-    <div th:case="'Not Found'">
-        <h1>Page not found!!</h1>
-    </div>
-    <div th:case="'Forbidden'">
-        <h1>Internal Server Error.</h1>
+    <div th:case="'Server Error'">
+        <h1>There was an issue communicating with the server.</h1>
     </div>
 </th:block>
 
