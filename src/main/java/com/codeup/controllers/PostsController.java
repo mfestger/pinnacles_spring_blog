@@ -3,6 +3,7 @@ package com.codeup.controllers;
 import com.codeup.models.Post;
 import com.codeup.models.User;
 import com.codeup.repositories.UsersRepository;
+import com.codeup.svcs.AdSvc;
 import com.codeup.svcs.PostSvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,18 +28,6 @@ public class PostsController {
         this.usersDao = usersDao;
     }
 
-    @GetMapping("/posts.json")
-    public @ResponseBody Page<Post> viewAllPostsInJSONFormat(
-            @PageableDefault(value=10) Pageable pageable
-    ) {
-        return posts.findAll(pageable);
-    }
-
-    @GetMapping("/posts/scroll")
-    public String scrollPosts(Model model, @PageableDefault(value = 10) Pageable pageable) {
-        model.addAttribute("page", posts.findAll(pageable));
-        return "posts/scroll";
-    }
 
     @GetMapping("/posts")
     public String viewAll(Model model) {

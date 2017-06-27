@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <h1>Register</h1>
+        <h1 id="registerTitle">Register</h1>
         <div class="col l8 offset-l2">
             <form th:action="@{/users/register}" th:method="POST" th:object="${user}">
                 <label for="username">Username</label>
