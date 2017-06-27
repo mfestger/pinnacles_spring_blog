@@ -1,5 +1,7 @@
 package com.codeup.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 // A Java bean is class with a default constructor and it has getters and setters for all
@@ -22,6 +24,10 @@ public class Post {
 
     @OneToOne
     private User owner;
+
+    @ManyToOne
+    @JsonManagedReference
+    private User user;
 
     public Post(String title, String body, User owner) {
         this.title = title;

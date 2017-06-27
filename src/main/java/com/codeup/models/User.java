@@ -1,10 +1,18 @@
 package com.codeup.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
 public class User {
+
+    @OneToMany(mappedBy = "user")
+    @JsonBackReference
+    private List<Post> posts;
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
@@ -17,6 +25,7 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     public User(){
