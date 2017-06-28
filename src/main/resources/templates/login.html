@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments :: head('title')" />
-<head th:include="fragments :: login('idk')" />
+<head th:include="fragments :: head('title')"/>
+<head th:include="fragments :: login('style')"/>
 <body>
-<nav th:replace="fragments :: my-navbar" />
-<h1>Log In</h1>
-<div th:if="${param.error}">
-    Invalid Username and Password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
+<nav th:replace="fragments :: my-navbar"/>
+<div class="container">
+    <div class="row">
+        <h1 id="loginTitle">Log In</h1>
+        <div class="col l8 offset-l2">
+            <div th:if="${param.error}">
+                Invalid Username and Password.
+            </div>
+            <div th:if="${param.logout}">
+                You have been logged out.
+            </div>
 
-<form th:action="@{/login}" method="post">
-    <label for="username">Username</label>
-    <input id="username" name="username" type="text" />
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" />
-    <input type="submit" value="Log In" />
-</form>
+            <form th:action="@{/login}" method="post">
+                <label for="username" class="usernameLoginTitle">Username</label>
+                <input id="username" class="usernameLoginPage formFieldsLogin form-control" name="username" type="text"/>
+
+                <label for="password" class="passwordLoginTitle">Password</label>
+                <input id="password" class="passwordLoginPage formFieldsLogin form-control" name="password" type="password"/>
+
+                <input id="loginSubmitButton" type="submit" class="btn" value="Log In"/>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

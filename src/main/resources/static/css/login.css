@@ -1,7 +1,54 @@
 body {
     background-image: url("http://i.imgur.com/TLnBpvu.jpg");
-    background-attachment: fixed;
-    background-color: green;
+    background-attachment: local;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
+    background-color: #F8F8F8;
 }
+
+#loginTitle {
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.usernameLoginTitle {
+    margin-top: 5%;
+    margin-left: 47%;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+}
+
+.usernameLoginPage {
+    margin-left: 26%;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+}
+
+.passwordLoginTitle {
+    margin-top: 4%;
+    margin-left: 47%;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+}
+
+.passwordLoginPage {
+    margin-left: 26%;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+}
+
+.formFieldsLogin {
+    width: 50%;
+    margin-left: 26%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#loginSubmitButton {
+    margin-left: 46%;
+    margin-top: 4%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+
