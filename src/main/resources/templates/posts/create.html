@@ -5,10 +5,10 @@
 <nav th:replace="fragments :: my-navbar"></nav>
 <div class="container">
     <form
-            th:include="fragments :: adForm"
-            th:action="@{/ads/create}"
+            th:include="posts/fragments :: form"
+            th:action="@{/posts/create}"
             th:method="post"
-            th:object="${ad}"
+            th:object="${post}"
     />
 </div>
 </body>

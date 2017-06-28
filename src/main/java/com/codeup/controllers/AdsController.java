@@ -11,6 +11,8 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.io.File;
+import java.nio.file.Paths;
 
 @Controller
 public class AdsController {
@@ -82,6 +84,16 @@ public class AdsController {
             model.addAttribute("ad", ad);
             return "ads/create";
         }
+
+//        String filename = uploadedFile.getOriginalFilename();
+//        String filepath = Paths.get(uploadPath, filename).toString();
+//        File destinationFile = new File(filepath);
+//
+//        try {
+//            uploadedFile.transfterTo(destinationFile);
+//            model.addAttribute("message", "File successfully uploaded!")
+//        } catch ()
+
 
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         ad.setAuthor(user);

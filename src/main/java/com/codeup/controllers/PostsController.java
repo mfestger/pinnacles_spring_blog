@@ -60,7 +60,7 @@ public class PostsController {
         Post post = new Post(title, body, user);
         postSvc.save(post);
         model.addAttribute("post", post);
-        return "posts/create";
+        return "redirect:/posts";
     }
 
     @GetMapping("/posts/{id}/edit")

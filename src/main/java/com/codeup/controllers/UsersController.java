@@ -27,7 +27,7 @@ public class UsersController {
 
         //Create a default user role for the new user
 
-        return null;
+        return "redirect:/login";
 
     }
 
