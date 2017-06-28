@@ -1,0 +1,7 @@
+body {
+    background-image: url("http://i.imgur.com/TLnBpvu.jpg");
+    background-attachment: fixed;
+    background-color: green;
+    background-repeat: no-repeat;
+    background-position: center;
+}
