@@ -1,9 +1,16 @@
 body {
     background-image: url("http://i.imgur.com/z5ziSgO.jpg");
-    background-attachment: local;
-    background-repeat: no-repeat;
-    background-position: center;
+    /*background-attachment: local;*/
+    /*background-repeat: no-repeat;*/
+    background-position: 100%;
+    /*background-size: 100%;*/
     background-color: #F8F8F8;
+    /*background-origin: content-box;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+
 
 }
 
