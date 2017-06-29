@@ -2,19 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>Create a Post</title>
 </head>
 <body>
 <form th:fragment="form">
     <div class="form-group">
-        <label for="title">Title</label>
-        <input id="title" type="text" th:field="*{title}"/>
+       <h2> <label class="createPostTitle" for="title">New Post Title: </label></h2>
+        <input class="createPostTitleField" id="title" type="text" th:field="*{title}"/>
     </div>
     <div class="form-group">
-        <label for="body">Body</label>
-        <input id="body" type="text" th:field="*{body}"/>
+        <h2> <label class="createPostSnippet" for="snippet">Snippet: </label></h2>
+        <input class="createPostSnippetField" id="snippet" type="text" th:field="*{snippet}"/>
     </div>
-    <button class="btn btn-default">Save</button>
+    <div class="form-group">
+        <h2> <label class="createPostBody" for="body"> Body: </label></h2>
+        <textarea class="createPostBodyField" id="body" type="text" th:field="*{body}"/>
+    </div>
+
+
+    <button class="btn btn-default createPostSaveButton">Save</button>
 </form>
 </body>
 </html>

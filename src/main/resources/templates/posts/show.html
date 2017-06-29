@@ -5,11 +5,9 @@
 
 <nav th:replace="fragments :: my-navbar" />
 <div class="container">
-    <h1>Posts Show Page</h1>
-    <h2>This is the view for an individual post.</h2>
     <h2>Title: <span th:text="${post.title}"></span></h2>
-    <h2>Body: <span th:text="${post.body}"></span></h2>
-    <h2>Email: <span th:text="${post.owner.email}"></span></h2>
+    <h4>Body: <span th:text="${post.body}"></span></h4>
+    <h6>Email: <span th:text="${post.owner.email}"></span></h6>
 </div>
 </body>
 </html>

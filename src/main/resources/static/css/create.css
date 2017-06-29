@@ -1,0 +1,8 @@
+.createPostTitleField {
+    width: 50%;
+}
+
+.createPostBodyField {
+    width: 70%;
+    height: 200px;
+}

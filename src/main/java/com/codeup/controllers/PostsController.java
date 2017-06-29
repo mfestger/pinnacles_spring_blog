@@ -54,10 +54,11 @@ public class PostsController {
     public String savePost(
             @RequestParam(name = "title") String title,
             @RequestParam(name = "body") String body,
+            @RequestParam(name = "snippet") String snippet,
             Model model
     ) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Post post = new Post(title, body, user);
+        Post post = new Post(title, body, snippet, user);
         postSvc.save(post);
         model.addAttribute("post", post);
         return "redirect:/posts";

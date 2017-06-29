@@ -2,21 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head th:replace="fragments :: head('All posts')" />
-<head th:replace="fragments :: index('style')" />
+<head th:replace="fragments :: head('All posts')"/>
+<head th:replace="fragments :: index('style')"/>
 
 <body>
-<nav th:replace="fragments :: my-navbar" />
+<nav th:replace="fragments :: my-navbar"/>
 
 <div class="container">
     <h2 id="indexTitle">Viewing: All Posts</h2>
-
-    <div class="individualPost" th:each="post : ${posts}">
-        <h2><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> <span th:text="${post.title}"></span></h2>
-        <h4> <span th:text="${post.body}"></span></h4>
-        <h5> <span th:text="${post.owner.email}"></span></h5>
-    </div>
+        <div class="individualPost" th:each="post : ${posts}">
+            <h2><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> <span
+                    th:text="${post.title}"></span></h2>
+            <h4><span th:text="${post.snippet}"></span></h4>
+            <h5><span th:text="${post.owner.email}"></span></h5>
+        </div>
 </div>
+
 
 </body>
 </html>

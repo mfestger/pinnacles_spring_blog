@@ -22,7 +22,8 @@ public class Post {
     @Column(nullable = false, columnDefinition = "text")
     private String body;
 
-
+    @Column(nullable = false)
+    private String snippet;
 
     @OneToOne
     private User owner;
@@ -31,9 +32,10 @@ public class Post {
     @JsonManagedReference
     private User user;
 
-    public Post(String title, String body, User owner) {
+    public Post(String title, String body, String snippet, User owner) {
         this.title = title;
         this.body = body;
+        this.snippet = snippet;
         this.owner = owner;
     }
 
@@ -63,6 +65,14 @@ public class Post {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getSnippet() {
+        return snippet;
+    }
+
+    public void setSnippet(String snippet) {
+        this.snippet = snippet;
     }
 
     public User getOwner() {
