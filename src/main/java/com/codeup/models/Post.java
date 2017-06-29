@@ -22,6 +22,8 @@ public class Post {
     @Column(nullable = false, columnDefinition = "text")
     private String body;
 
+
+
     @OneToOne
     private User owner;
 

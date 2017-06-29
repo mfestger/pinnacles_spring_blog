@@ -1,0 +1,17 @@
+body {
+    background-image: url("http://i.imgur.com/AiEdpom.jpg");
+    background-position: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #F8F8F8;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#indexTitle {
+    text-align: center;
+}
+
+
+.individualPost {
+
+}
