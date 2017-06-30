@@ -28,7 +28,10 @@
                     html += "<div><h1>" + posts[i].title + "</h1><p>" + posts[i].body + "</p></div>";
                 }
 
+                $posts.reverse(); // look into reversing the order of the blog posts
                 $posts.append(html);
+
+
 
                 currentPage++;
                 fetching = false;

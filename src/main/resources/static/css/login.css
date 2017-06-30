@@ -46,7 +46,6 @@ body {
 }
 
 #loginSubmitButton {
-    /*margin-left: 46%;*/
     margin-top: 4%;
     font-family: 'Titillium Web', sans-serif;
 }
@@ -80,6 +79,5 @@ body {
     #in {
         color:black;
     }
-
 
 }

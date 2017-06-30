@@ -10,12 +10,14 @@
 
 <div class="container">
     <h2 id="indexTitle">Viewing: All Posts</h2>
-        <div class="individualPost" th:each="post : ${posts}">
+    <div class="individualPost" th:each="post : ${posts}">
+        <a th:href="@{'posts/' + ${id}}">
             <h2><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> <span
                     th:text="${post.title}"></span></h2>
-            <h4><span th:text="${post.snippet}"></span></h4>
-            <h5><span th:text="${post.owner.email}"></span></h5>
-        </div>
+        </a>
+        <h4><span th:text="${post.snippet}"></span></h4>
+        <h5>Written by: <span th:text="${post.owner.email}"></span></h5>
+    </div>
 </div>
 
 
